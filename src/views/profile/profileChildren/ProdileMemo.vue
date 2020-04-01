@@ -12,6 +12,7 @@
           placeholder="请输入任务"
           class="new-todo"
         />
+        <span @click='add'>Y</span>
       </header>
       <!-- 列表区域 -->
       <section class="main">

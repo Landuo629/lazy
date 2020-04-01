@@ -47,10 +47,9 @@ export default {
       //网络请求相关方法
       //随机句子
       getsentence(type) {
-        console.log(type)
+        //console.log(type)
         getsentence(type)
         .then(res => {
-           console.log(res)
           // console.log(res.data.hitokoto)
           this.sentence = res.data.hitokoto
           this.sentenceFrom = res.data.from

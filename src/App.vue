@@ -1,28 +1,43 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <home v-show="isActive" ref="home"></home>
+    <Time @show-click="active"></Time>
+    <Profile v-show="!isActive"></Profile>
+    <setUp @confirm-click='confirm'></setUp>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from 'views/home/Home'
+import Time from 'views/time/Time'
+import Profile from 'views/profile/Profile'
+import SetUp from 'views/setUp/SetUp'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Home,
+    Time,
+    Profile,
+    SetUp
+  },
+  data() {
+    return {
+      isActive: true
+    }
+  },
+  methods: {
+    active() {
+      this.isActive = !this.isActive
+    },
+    confirm(item) {
+      this.$refs.home.type = item
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+@import 'assets/css/base.css';
+@import '//at.alicdn.com/t/font_1716900_b253lb2vcsf.css';
 </style>

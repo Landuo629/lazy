@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .link {
         position: fixed;
         top: 16%;

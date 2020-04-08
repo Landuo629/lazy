@@ -14,7 +14,7 @@
             <input type="checkbox" />
           </li>
           <li @click="confirm()">
-            <input type="button" value="提交" />
+            <input type="button" value="提交"/>
           </li>
         </form>
       </div>
@@ -46,13 +46,14 @@ export default {
     };
   },
   methods: {
+    //设置显示与隐藏
     setup() {
       this.isActive = !this.isActive;
     },
+    //提交后返回对应的参数及隐藏
     confirm() {
       const oUl = this.$refs.form;
       const length = this.$refs.form.children.length;
-      //const a,b,c,d,e,f,g,h,i,j,k,l
        const a = oUl[0].checked ? "c=a" : "";
        const b = oUl[1].checked ? "c=b" : "";
        const c = oUl[2].checked ? "c=c" : "";
@@ -78,6 +79,7 @@ export default {
                     l;
       this.$emit("confirm-click", item);
       console.log(item);
+      this.isActive = false
     }
   }
 };
@@ -90,7 +92,7 @@ export default {
   top: 0.7rem;
 }
 .setup .button {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .setup .display {
   position: absolute;
@@ -108,7 +110,6 @@ export default {
 }
 
 .setup .header div {
-  border: 1px solid #000;
   flex: 1;
   line-height: 2rem;
 }

@@ -59,7 +59,7 @@ export default {
         right: 1rem;
         color: #008484;
         transition: all .5s;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 
     .toggle-button:hover {

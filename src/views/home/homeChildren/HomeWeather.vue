@@ -30,7 +30,7 @@ export default {
     getweather() {
       getweather("安吉")
         .then(res => {
-          console.log(res);
+          //console.log(res);
           this.city = res.data.city;
           this.tem = res.data.data[0].tem;
           this.wea = res.data.data[0].wea;

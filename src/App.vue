@@ -33,7 +33,7 @@ export default {
     confirm(item) {
       this.$refs.home.type = item
     }
-  }
+}
 }
 </script>
 

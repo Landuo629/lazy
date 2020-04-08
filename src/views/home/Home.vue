@@ -3,7 +3,7 @@
       <home-background ref="background"></home-background>
       <home-search @button-click="smogY" ref="search" ></home-search>
       <home-sentence :sentence='sentence' :sentenceFrom='sentenceFrom' v-show="isActive"></home-sentence>
-      <home-weather></home-weather>
+      <home-weather v-show="false"></home-weather>
     </div>
 </template>
 
@@ -50,7 +50,7 @@ export default {
         //console.log(type)
         getsentence(type)
         .then(res => {
-          // console.log(res.data.hitokoto)
+          //console.log(res)
           this.sentence = res.data.hitokoto
           this.sentenceFrom = res.data.from
           

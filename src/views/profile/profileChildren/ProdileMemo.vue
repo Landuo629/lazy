@@ -1,27 +1,24 @@
 <template>
-  <div class="memo">
-    <!-- 主体区域 -->
-    <section id="todoapp">
+  <div class="memo" >
       <!-- 输入框 -->
       <header class="header">
-        <input
+        <textarea
+          type="text"
           v-model="inputValue"
           @keyup.enter="add"
-          autofocus="autofocus"
           autocomplete="off"
-          placeholder="请输入任务"
           class="new-todo"
         />
-        <span @click='add'>Y</span>
+        <span @click='add'>＋</span>
       </header>
       <!-- 列表区域 -->
       <section class="main">
         <ul class="todo-list">
-          <li class="todo" v-for="(item,index) in list" :key="item.id">
+          <li class="todo" v-for="(item,index) in list" :key="item.id" @click="display(item)">
             <div class="view">
+              <span class="destroy" @click="romove(index)">X</span>
               <span class="index">{{ index+1 }}.</span>
               <label>{{ item }}</label>
-              <button class="destroy" @click="romove(index)">X</button>
             </div>
           </li>
         </ul>
@@ -33,7 +30,6 @@
         </span>
         <button class="clear-completed" @click="sub" v-if="list.length!=0">Clear</button>
       </footer> -->
-    </section>
   </div>
 </template>
 
@@ -43,13 +39,13 @@ export default {
   data() {
     return {
       //  总数据
-      list: ["吃饭饭", "睡觉觉", "写代码"],
+      list: [],
       //  输入的内容
       inputValue: ""
     };
   },
   methods: {
-    add: function() {
+    add() {
       this.list.push(this.inputValue);
       this.inputValue = "";
     },
@@ -58,8 +54,16 @@ export default {
       //console.log(index);
       this.list.splice(index, 1);
     },
-    sub: function() {
+    sub() {
       this.list = [];
+    },
+    move(e) {
+      this.$refs.move.style.left = e.clientX + 'px'
+      console.log(this.$refs.move.style.left)
+      console.log(e.clientX)
+    },
+    display(item) {
+      this.inputValue = item
     }
   }
 };
@@ -68,23 +72,44 @@ export default {
 <style scoped>
 .memo {
     position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-.memo .header input{
-    padding: 0.2rem;
+    top: 25%;
+    left: 30%;
 }
 
-.memo .main .todo-list .todo {
-    background-color: #fff;
-    border-bottom: 1px solid #888;
+.memo .header textarea {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  width: 20rem;
+  height: 8rem;
 }
 
-.memo .main .todo-list .todo .view button{
-    position: absolute;
-    right: 0;
-    font-size: 0.2rem;
+.memo .header span {
+  position: absolute;
+  top: 0.2rem;
+  padding: 3.2rem 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
 }
 
+.memo .main {
+  position: absolute;
+  left: 22rem;
+  top: 0;
+}
+
+.memo .main .todo-list .todo{
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 8rem;
+  height: 1.2rem;
+  overflow: hidden;
+  border: rgba(0, 0, 0, 0.2) solid 1px;
+}
+
+.memo .main .todo-list .view .destroy {
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  right: -1rem;
+}
 </style>

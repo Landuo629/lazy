@@ -9,12 +9,12 @@
         type="text"
         name="word"
         size="40"
-        placeholder="input"
+        v-model="Search"
         @click="smog(true)"
         @input="association"
         autocomplete="off"
         maxlength="30"
-         :class="{'smog': isActive}"
+        :class="{'smog': isActive}"
       />
       <!-- name只能为word，否则会跳转到百度原页面 -->
       <!-- <input type="submit" value="百度一下" /> -->
@@ -34,7 +34,7 @@ export default {
   name: "HomeSearch",
   data() {
     return {
-      lazy: "lazy",
+      Search: "Search",
       isActive: false,
       associationalword: [],
       i : -1
@@ -45,6 +45,7 @@ export default {
     smog(item) {
       this.isActive = true
       this.$emit("button-click", item)
+      this.Search = ''
     },
     //获取联想词
     association(e) {
@@ -71,23 +72,27 @@ export default {
 <style scoped>
 .home-search form {
   position: fixed;
-  top: 22%;
+  top: 26%;
   left: 50%;
   z-index: 3;
+  font-size: small;
 }
 .home-search form input {
   position: absolute;
   transform: translate(-50%, -100%);
   width: 200px;
-  height: 2rem;
+  height: 1rem;
   border-radius: 400px;
   background-color: rgba(0, 0, 0, 0.2);
   text-align: center;
   outline: none;
   border: none;
+  padding: 1rem 0.5rem;
+  transition: width ease .5s;
 }
 .home-search form input:hover {
   width: 400px;
+  color: #fff;
 }
 .home-search form .smog {
   width: 400px;
@@ -100,8 +105,21 @@ export default {
 }
 .home-search form ul li {
   padding: 0.1rem 0;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.3); 
+  padding: 0.2rem 1rem;
+}
+.home-search form ul li a {
+  color: rgba(255,255,255,.8);
+  font-size: small;
+}
+.home-search form ul li:first-child {
+  border-radius: 10px 10px 0 0;
+  padding-top: 0.5rem;
+}
+
+.home-search form ul li:last-child {
+  border-radius: 0 0 10px 10px ;
+  padding-bottom: 0.5rem;
 }
 
 .home-search form ul li:hover {

@@ -43,15 +43,19 @@ export default {
 <style scoped>
 .time {
     position: fixed;
-    top: 8%;
+    top: 12%;
     left: 50%;
     transform: translate(-50%, 0);
-    font-size: 2rem;
-    color: #004848;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, .8);
+    font-weight: bolder;
+    border-bottom: 0rem solid #494949;
+    transition: font-size,border-bottom ease 1.2s;
 }
 
+
 .time:hover {
-    font-size: 1.8rem;
+    font-size: 2rem;
     border-bottom: 0.2rem solid #494949;
 }
 </style>

@@ -4,6 +4,7 @@
     <Time @show-click="active"></Time>
     <Profile v-show="!isActive"></Profile>
     <setUp @confirm-click='confirm'></setUp>
+    <About></About>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Home from 'views/home/Home'
 import Time from 'views/time/Time'
 import Profile from 'views/profile/Profile'
 import SetUp from 'views/setUp/SetUp'
+import About from 'views/setUp/About'
 
 export default {
   name: 'App',
@@ -19,7 +21,8 @@ export default {
     Home,
     Time,
     Profile,
-    SetUp
+    SetUp,
+    About
   },
   data() {
     return {

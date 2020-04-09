@@ -35,8 +35,9 @@ export default {
       //点击遮罩层
       smogN() {
         this.$refs.search.isActive = false
+        this.$refs.search.Search = 'Search'
         this.$refs.background.mohu = false
-        this.isActive = false
+        this.isActive = false   
       },
       //点击input
       smogY(item) {

@@ -46,7 +46,7 @@ export default {
     top: 12%;
     left: 50%;
     transform: translate(-50%, 0);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: rgba(255, 255, 255, .8);
     font-weight: bolder;
     border-bottom: 0rem solid #494949;

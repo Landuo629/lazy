@@ -83,6 +83,8 @@ export default {
   border: none;
   width: 20rem;
   height: 8rem;
+  padding: 1rem;
+  font-size: small;
 }
 
 .memo .header span {

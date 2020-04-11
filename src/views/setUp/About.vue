@@ -4,8 +4,10 @@
       <span>|</span>
       <span @click="about">关于</span> 
       <div class="eject" v-show="isActive">
-          2020.4.9
-          上线
+          <div class="content" v-for="item in date" :key="item.id">
+              <div class="time">{{ item[0] }}</div>
+              <div class="value">{{ item[1] }}</div>
+          </div>
           <div class="close" @click="close">×</div>
       </div>
   </div>
@@ -16,7 +18,11 @@ export default {
     name: 'About',
     data() {
         return {
-            isActive: false
+            isActive: false,
+            date: [
+                ['2020.4.9', '上线'],
+                ['2020.4.10', '改进:优化了点击输入框背景动画']
+            ]
         }
     },
     methods: {
@@ -57,10 +63,12 @@ export default {
     z-index: 8;
     border-radius: 25px;
     box-sizing: border-box;
-    padding: 5rem;
+    padding: 3rem;
     color: #000;
 }
-
+.about .eject .content {
+    padding-top: 1rem;
+}
 .about .eject .close {
     position: absolute;
     right: 1rem;

@@ -39,6 +39,7 @@ export default {
   font-size: small;
   color: #fff;
   transition: background-color ease 1.2s;
+  overflow: hidden;
 }
 
 .sentence:hover {

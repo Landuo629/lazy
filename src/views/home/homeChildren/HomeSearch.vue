@@ -15,6 +15,7 @@
         autocomplete="off"
         maxlength="30"
         :class="{'smog': isActive}"
+        ref="qq"
       />
       <!-- name只能为word，否则会跳转到百度原页面 -->
       <!-- <input type="submit" value="百度一下" /> -->
@@ -34,17 +35,30 @@ export default {
   name: "HomeSearch",
   data() {
     return {
-      Search: "Search",
-      isActive: false,
       associationalword: [],
-      i : -1
+      i : -1,
+      Search: 'Search'
     };
+  },
+  computed: {
+    isActive() {
+      return this.$store.state.isActive 
+    }
+  },
+  mounted() {
+      var that = this
+      //子组件接收数据
+      this.bus.$on("Search", function(data) {
+          that.Search = data
+      });
   },
   methods: {
     //点击from
     smog(item) {
-      this.isActive = true
+      // this.isActive = true
+      this.$store.commit('isActive', true)
       this.$emit("button-click", item)
+      this.$store.commit('mohu', true)
       this.Search = ''
     },
     //获取联想词
@@ -82,13 +96,14 @@ export default {
   transform: translate(-50%, -100%);
   width: 200px;
   height: 1rem;
-  border-radius: 400px;
+  border-radius: 100px;
   background-color: rgba(0, 0, 0, 0.2);
   text-align: center;
   outline: none;
   border: none;
   padding: 1rem 0.5rem;
   transition: width ease .5s;
+  color: #000;
 }
 .home-search form input:hover {
   width: 400px;

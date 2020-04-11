@@ -26,7 +26,7 @@ export default {
 <style scoped>
 .link {
   position: fixed;
-  top: 16%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, 0);
   width: 36rem;
@@ -39,7 +39,9 @@ export default {
   height: 1rem;
   font-size: 0.8rem;
 }
-
+.link .item a{
+  color: #fff;
+}
 .link .item:hover {
   font-size: 1.2rem;
   height: 1.2rem;

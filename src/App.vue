@@ -5,10 +5,12 @@
     <Profile v-show="!isActive"></Profile>
     <setUp @confirm-click='confirm'></setUp>
     <About></About>
+    <Background></Background>
   </div>
 </template>
 
 <script>
+import Background from 'views/setUp/Background'
 import Home from 'views/home/Home'
 import Time from 'views/time/Time'
 import Profile from 'views/profile/Profile'
@@ -22,7 +24,8 @@ export default {
     Time,
     Profile,
     SetUp,
-    About
+    About,
+    Background
   },
   data() {
     return {

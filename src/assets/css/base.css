@@ -24,6 +24,8 @@ body{
     background: var(--color-background);
     /*rem vw/vh*/
     width: 100vw;
+    /* 进度条隐藏 */
+    overflow-x: hidden; overflow-y: hidden;
 }
 
 a{

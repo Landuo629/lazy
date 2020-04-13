@@ -33,6 +33,7 @@ export default {
         transform: translate(-50%, 0);
         width: 36rem;
         background-color: thistle;
+        z-index: 5;
     }
     /* .item {
         padding: 0.2rem;

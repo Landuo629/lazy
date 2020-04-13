@@ -15,7 +15,7 @@
         autocomplete="off"
         maxlength="30"
         :class="{'smog': isActive}"
-        ref="qq"
+        ref="search"
       />
       <!-- name只能为word，否则会跳转到百度原页面 -->
       <!-- <input type="submit" value="百度一下" /> -->
@@ -53,13 +53,13 @@ export default {
       });
   },
   methods: {
-    //点击from
+    //点击input
     smog(item) {
       // this.isActive = true
       this.$store.commit('isActive', true)
       this.$emit("button-click", item)
       this.$store.commit('mohu', true)
-      this.Search = ''
+      this.Search === 'Search' ? this.Search = '' : null
     },
     //获取联想词
     association(e) {
@@ -72,11 +72,11 @@ export default {
     },
     //联想词使用鼠标↑键
     upper() {
-      console.log(1);
+      console.log('上');
     },
     //联想词使用鼠标↓键
     lower() {
-      console.log(2);
+      console.log('下');
       this.associationalword[this.i++]
     }
   }
@@ -97,17 +97,18 @@ export default {
   width: 200px;
   height: 1rem;
   border-radius: 100px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255,255,255,.25);
   text-align: center;
   outline: none;
   border: none;
   padding: 1rem 0.5rem;
   transition: width ease .5s;
   color: #000;
+  box-shadow: rgba(0,0,0,.2) 0 0 10px;
+  backdrop-filter: blur(10px);
 }
 .home-search form input:hover {
   width: 400px;
-  color: #fff;
 }
 .home-search form .smog {
   width: 400px;
@@ -126,6 +127,8 @@ export default {
 .home-search form ul li a {
   color: rgba(255,255,255,.8);
   font-size: small;
+  display:inline-block;
+  width: 400px;
 }
 .home-search form ul li:first-child {
   border-radius: 10px 10px 0 0;

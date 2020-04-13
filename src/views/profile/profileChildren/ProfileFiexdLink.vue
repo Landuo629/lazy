@@ -14,9 +14,14 @@ export default {
         ['博客园', 'https://www.cnblogs.com/'],
         ['百度', 'https://www.baidu.com/'],
         ['GitHub', 'https://github.com/'],
-        ['阿里巴巴矢量图标库', 'https://www.iconfont.cn/'],
+        ['图标库', 'https://www.iconfont.cn/'],
         ['W3school', 'https://www.w3school.com.cn/'],
-        ['百度翻译', 'https://fanyi.baidu.com/?aldtype=16047#auto/zh']
+        ['百度翻译', 'https://fanyi.baidu.com/?aldtype=16047#auto/zh'],
+        ['网易云音乐', 'https://music.163.com/'],
+        ['淘宝', 'https://www.taobao.com/'],
+        ['京东', 'https://www.jd.com/'],
+        ['贴吧', 'https://tieba.baidu.com/'],
+        ['腾讯视频', 'https://v.qq.com/']
       ]
     };
   }
@@ -32,18 +37,29 @@ export default {
   width: 36rem;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  z-index: 5;
 }
 
 .link .item {
   overflow: hidden;
-  height: 1rem;
+  height: 1.2rem;
   font-size: 0.8rem;
-}
-.link .item a{
+  width: 6rem;
+  text-align: center;
+  border-radius: 10px;
+  padding: 0.1rem 0;
   color: #fff;
 }
-.link .item:hover {
-  font-size: 1.2rem;
+.link .item a{
+  color: inherit;
+  display:inline-block;
+  width: 6rem;
   height: 1.2rem;
 }
+.link .item:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #008484;
+}
+
 </style>

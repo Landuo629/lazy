@@ -72,8 +72,9 @@ export default {
 <style scoped>
 .memo {
     position: fixed;
-    top: 25%;
+    top: 36%;
     left: 30%;
+    z-index: 5;
 }
 
 .memo .header textarea {

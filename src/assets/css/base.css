@@ -7,8 +7,9 @@
     --color-high-text:#ff5777;
     --color-tint:#ff8198; 
     --color-background:#fff;
-    --font-size:14px;
+    --font-size:16px;
     --line-height:1.5;
+    font-size: 20px;
 }
 
 *,*::before,*::after{
@@ -19,13 +20,14 @@
 
 body{
     font-family: microsoft yahei light,microsoft yahei,PingFangSC-Regular,Helvetica,sans-serif,等线;
-    user-select: none;/*禁止用户鼠标在页面上选中文字图片等*/
+    /* user-select: none;禁止用户鼠标在页面上选中文字图片等 */
     -webkit-tap-highlight-color: transparent;/*webkit是苹果引擎,tap点击，heighlight背景高亮，color颜色，颜色用数值调节*/
     background: var(--color-background);
     /*rem vw/vh*/
     width: 100vw;
     /* 进度条隐藏 */
-    overflow-x: hidden; overflow-y: hidden;
+    overflow-x: hidden; 
+    overflow-y: hidden;
 }
 
 a{

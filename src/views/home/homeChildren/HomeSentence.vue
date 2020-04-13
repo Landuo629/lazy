@@ -40,6 +40,8 @@ export default {
   color: #fff;
   transition: background-color ease 1.2s;
   overflow: hidden;
+  /* 禁止用户鼠标在页面上选中文字图片等 */
+  user-select: none;
 }
 
 .sentence:hover {

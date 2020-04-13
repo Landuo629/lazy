@@ -93,6 +93,10 @@ export default {
 }
 .setup .button {
   font-size: 1.5rem;
+  transition: all .5s;
+}
+.setup .button:hover {
+  transform: rotate(60deg);
 }
 .setup .display {
   position: absolute;

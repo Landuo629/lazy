@@ -10,7 +10,7 @@
 <script>
 import HomeSearch from 'views/home/homeChildren/HomeSearch'
 import HomeSentence from 'views/home/homeChildren/HomeSentence'
-import HomeWeather from 'views/home/homeChildren/HomeWeather.vue'
+import HomeWeather from 'views/home/homeChildren/HomeWeather'
 
 import {getsentence} from 'network/home.js'
 
@@ -39,6 +39,10 @@ export default {
         }
     }
     },
+    created() {
+      // 传入一言句子类型
+      this.getsentence(this.type)
+    },
     methods: {
       //点击遮罩层
       smogN() {
@@ -51,7 +55,6 @@ export default {
       smogY(item) {
         this.isActive = item
         // this.$refs.background.mohu = true
-        this.getsentence(this.type)
       },
       //网络请求相关方法
       //随机句子

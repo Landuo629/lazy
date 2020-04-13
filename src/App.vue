@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <home v-show="isActive" ref="home"></home>
-    <Time @show-click="active"></Time>
+    <Time @show-click="active" ref="mohu"></Time>
     <Profile v-show="!isActive"></Profile>
     <setUp @confirm-click='confirm'></setUp>
     <About></About>
-    <Background></Background>
+    <Background @show-click="correct"></Background>
+    <Music></Music>
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import Time from 'views/time/Time'
 import Profile from 'views/profile/Profile'
 import SetUp from 'views/setUp/SetUp'
 import About from 'views/setUp/About'
+import Music from 'views/setUp/Music'
 
 export default {
   name: 'App',
@@ -25,7 +27,8 @@ export default {
     Profile,
     SetUp,
     About,
-    Background
+    Background,
+    Music
   },
   data() {
     return {
@@ -35,6 +38,10 @@ export default {
   methods: {
     active() {
       this.isActive = !this.isActive
+    },
+    correct() {
+      this.isActive = true
+      this.$refs.mohu.mohu = false
     },
     confirm(item) {
       this.$refs.home.type = item

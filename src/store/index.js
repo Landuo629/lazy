@@ -6,8 +6,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
     state: {
         mohu: false,
-        isActive: false,
-        Search: "Search"
+        isActive: false
     },
     mutations: {
         mohu(state, n) {

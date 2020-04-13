@@ -45,6 +45,7 @@ export default {
       this.$store.commit("isActive", false);
        //子组件发送数据
       this.bus.$emit("Search", this.Search);
+      this.$emit("show-click");
     }
   }
 };
@@ -55,7 +56,7 @@ export default {
   /* no-repeat 背景图片取消重复 */
   /* cover 自动等比例拉伸图片 */
   /* 必应每日背景 */
-  background: url(https://open.saintic.com/api/bingPic/) no-repeat top center;
+  background: url(https://api.xygeng.cn/bing/1366.php) no-repeat top center;
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
@@ -66,15 +67,18 @@ export default {
   right: 0;
   bottom: 0;
   z-index: -1;
-  transition: transform ease 0.5s;
+  transition: transform ease 0.2s;
+  /* 设置亮度值，范围：0-1 */
+  filter:brightness(0.9);
 }
+
 
 .toggle-button {
   position: fixed;
   top: 1rem;
   right: 1rem;
   color: #008484;
-  transition: all 0.5s;
+  transition: all 0.8s;
   font-size: 1.1rem;
 }
 
@@ -91,7 +95,8 @@ export default {
   left: 0;
   top: 0;
   /* background: inherit; */
-  filter: blur(7px);
+  /* 背景模糊加亮度 */
+  filter: blur(7px) brightness(0.9);
   z-index: 2;
   transform: scale(1.1, 1.1);
 }

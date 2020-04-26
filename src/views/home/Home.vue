@@ -2,7 +2,7 @@
     <div id="Home" @click.capture ="smogN">
       <!-- <home-background ref="background"></home-background> -->
       <home-search @button-click="smogY" ref="search"></home-search>
-      <home-sentence :sentence='sentence' :sentenceFrom='sentenceFrom' v-show="isActive"></home-sentence>
+      <home-sentence :sentence='sentence' :sentenceFrom='sentenceFrom' v-show="isActive&&isActive2"></home-sentence>
       <home-weather v-show="false"></home-weather>
     </div>
 </template>
@@ -37,7 +37,10 @@ export default {
         set(val) {
 
         }
-    }
+    },
+    isActive2() {
+          return this.$store.state.isActive2
+        }
     },
     created() {
       // 传入一言句子类型

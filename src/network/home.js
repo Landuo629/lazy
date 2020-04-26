@@ -1,16 +1,23 @@
 import {request} from './request'
 
 //随机句子模块
-export function getsentence(parameter){
+export function getsentence(parameter) {
     return request({
         url: 'https://v1.hitokoto.cn/?' + parameter,
     })
 }
 
 //天气模块
-export function getweather(city){
+export function getweather(city) {
     return request({
         url: 'https://tianqiapi.com/api?version=v1&appid=78313313&appsecret=6fJnrySc&vue=1&city=' + city,
+    })
+}
+
+//必应每日壁纸模块
+export function getbiying() {
+    return request({
+        url: 'https://api.no0a.cn/api/bing/0'
     })
 }
 

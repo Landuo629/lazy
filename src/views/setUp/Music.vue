@@ -20,7 +20,7 @@ export default {
 iframe {
   position: fixed;
   top: 7rem;
-  right: -15.9rem;
+  right: -16rem;
   /* transition: 变化的属性 花费时间 运动曲线 何时开始; */
   transition: right ease 0.5s;
 }

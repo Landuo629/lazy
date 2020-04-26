@@ -90,6 +90,7 @@ export default {
   position: fixed;
   right: 3rem;
   top: 0.7rem;
+  user-select: none;
 }
 .setup .button {
   font-size: 1.5rem;

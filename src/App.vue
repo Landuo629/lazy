@@ -7,6 +7,7 @@
     <About></About>
     <Background @show-click="correct"></Background>
     <Music></Music>
+    <Eject></Eject>
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import Profile from 'views/profile/Profile'
 import SetUp from 'views/setUp/SetUp'
 import About from 'views/setUp/About'
 import Music from 'views/setUp/Music'
+import Eject from 'views/popup/Eject'
 
 export default {
   name: 'App',
@@ -28,7 +30,8 @@ export default {
     SetUp,
     About,
     Background,
-    Music
+    Music,
+    Eject
   },
   data() {
     return {

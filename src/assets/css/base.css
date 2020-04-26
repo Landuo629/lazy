@@ -9,7 +9,6 @@
     --color-background:#fff;
     --font-size:16px;
     --line-height:1.5;
-    font-size: 20px;
 }
 
 *,*::before,*::after{
@@ -28,6 +27,7 @@ body{
     /* 进度条隐藏 */
     overflow-x: hidden; 
     overflow-y: hidden;
+    font-size: 20px;
 }
 
 a{

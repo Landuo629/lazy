@@ -46,11 +46,11 @@ export default {
     }
   },
   mounted() {
-      var that = this
+      const that = this
       //子组件接收数据
       this.bus.$on("Search", function(data) {
           that.Search = data
-      });
+      }) 
   },
   methods: {
     //点击input
@@ -77,7 +77,6 @@ export default {
     //联想词使用鼠标↓键
     lower() {
       console.log('下');
-      this.associationalword[this.i++]
     }
   }
 };
